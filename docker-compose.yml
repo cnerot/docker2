@@ -1,17 +1,17 @@
 version: "2"
 services:
-  nginx2:
+  nginxbis:
     build:
       context: ./docker/nginx
     ports:
       - "8081:80"
     volumes:
-      - ./app2:/var/app
+      - ./app:/var/app
   fpm2:
     build:
       context: ./docker/fpm
     volumes:
-      - ./app2:/var/app
+      - ./app:/var/app
     expose:
       - "9000"
     environment:
